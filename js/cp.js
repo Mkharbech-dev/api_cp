@@ -6,8 +6,9 @@ $(document).ready(function(){
                 url : `https://geo.api.gouv.fr/communes?codePostal=${$('#cp').val()}&fields=nom,code,codesPostaux,codeDepartement,codeRegion,population&format=json&geometry=centre`,
                 success:function(data){
                     for ( let ville of data){
-                        $('ul').append(`<li><span style="color: orange;">${ville.nom}</span> et le nombre de la population est : <span style="color: orange;">${ville.population} habitants</span> </li>`);
-                    }
+                      
+                        $('ul').append(`<li><span style="color: orange;">${ville.nom}</span>, code postal est: <span style="color: orange;">${ville.code}</span> et le nombre de la population est : <span style="color: orange;">${ville.population} habitants</span> </li>`);
+                    } 
                     
                 }
            })
